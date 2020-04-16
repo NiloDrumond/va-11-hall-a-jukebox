@@ -1,0 +1,27 @@
+.music-container {
+  /* width: 500px;
+  height: 80px; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red {
+  border: 4px solid #A6023C;
+}
+
+.blue {
+  border: 4px solid #3C84CF;
+  margin: 10px;
+  max-width: 100%;
+  width: calc(100% - 20px)
+}
+
+.number {
+  position: absolute;
+  left: 5%;
+}

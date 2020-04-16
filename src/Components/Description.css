@@ -1,0 +1,81 @@
+
+
+.divisor {
+  background-color: #1F1A2D;
+}
+
+#description {
+  display: grid;
+  grid-template-columns: 2fr 20px 1fr;
+}
+
+#description-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#description-left h1 {
+  font-size: 50px;
+  color: #FC1783;
+}
+
+#description-left p {
+  line-height: 2rem;
+  font-size: 36px;
+}
+
+#description-left span {
+  font-size: inherit;
+  color: #FC1783;
+}
+
+#description-right {
+  padding: 5px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#description-right a{
+  text-decoration: none;
+  color: #FC1783;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 20px;
+}
+
+#buttons button {
+  border: none;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  height: 120px;
+  color: #000;
+  font-size: 54px;
+  margin: 0px 20px;
+  border: 4px solid #000; 
+}
+
+#clear {
+  background-color: #3C84CF; 
+  outline: 10px solid #3C84CF;
+}
+
+#ready {
+  background-color: #A6023C;
+  outline: 10px solid #A6023C;
+}
+
+#buttons button:hover {
+  background-color: #FFBB31;
+  outline-color: #FFBB31;
+  cursor: pointer;
+}

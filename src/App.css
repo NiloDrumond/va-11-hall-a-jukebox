@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Vallhalla;
+  /* src: local('VA-11 Hall-A 6px'), url(./assets/fonts/va-11-hall-a-6px.ttf) format('ttf'); */
+  src: url(./assets/fonts/va-11-hall-a-6px.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font: 400 24px Vallhalla;
+  color: #ffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+  display: grid;
+  grid-template-rows: 28fr 20px 8fr;
+  height: 100vh;
+  border: 40px solid #1F1A2D;
+  background-color: #000000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#jukebox {
+  display: grid;
+  grid-template-columns: 630px auto;
+  column-gap: 10px;
+  max-height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+#red-music {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 30px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.divisor {
+  background-color: #1F1A2D;
 }
