@@ -22,7 +22,7 @@ function Player(props) {
       <div id="music-title">Every Day is Night</div>
     </div>
     <div id="options">
-      <button className="options-button">
+      <button className="options-button" onClick={props.onClick}>
         Create a playlist
       </button>
       <button className="options-button">

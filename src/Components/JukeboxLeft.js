@@ -7,7 +7,7 @@ function JukeboxLeft(props) {
   if (props.mode === 'player'){
     return(
       <div id="left">
-        <Player /> 
+        <Player onClick={props.onClick}/> 
       </div>
     )
   }

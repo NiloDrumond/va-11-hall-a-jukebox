@@ -30,7 +30,7 @@ function Description(props) {
           <div className="divisor"></div>
           <div id="buttons">
             <button id="clear">Clear</button>
-            <button id="ready">Ready!</button>
+            <button id="ready" onClick={props.onClick}>Ready!</button>
           </div>
         </div>
       </>

@@ -8,11 +8,23 @@ import JukeboxLeft from './Components/JukeboxLeft';
 function App() {
   const [mode, setMode] = useState('player');
 
+  function handleGoToPlayer(e){
+    e.preventDefault();
+
+    setMode('player');
+  }
+
+  function handleGoToSelector(e){
+    e.preventDefault();
+
+    setMode('selector');
+  }
+
   return (
     <div className="App">
       <main>
         <div id="jukebox">
-          <JukeboxLeft mode={mode}/>
+          <JukeboxLeft mode={mode} onClick={handleGoToSelector}/>
           <div id="right">
             <div id="red-music">
               <Music color="red" title="Every Day is Night" number="1" />
@@ -31,7 +43,7 @@ function App() {
           </div>
         </div>
         <div className="divisor"></div>
-        <Description mode={mode}/>
+        <Description mode={mode} onClick={handleGoToPlayer}/>
       </main>
     </div>
   );
