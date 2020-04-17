@@ -5,7 +5,20 @@ import Description from './Components/Description';
 import JukeboxLeft from './Components/JukeboxLeft';
 import Playlist from './Components/Playlist';
 
+import startMusic from './assets/musicManager';
+
 function App() {
+  const [loaded, setLoaded] = useState(false);
+
+  async function componentDidMount() {
+    if(!loaded){
+      await startMusic();
+      await setLoaded(true);
+    }
+  }
+
+  componentDidMount();
+
   const [mode, setMode] = useState('player');
   const [playlist, setPlaylist] = useState([
     {title: 'Every Day is Night', src:''},
