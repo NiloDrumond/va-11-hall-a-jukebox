@@ -1,12 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-import Music from './Components/Music';
 import Description from './Components/Description';
 import JukeboxLeft from './Components/JukeboxLeft';
+import Playlist from './Components/Playlist';
 
 function App() {
   const [mode, setMode] = useState('player');
+  const [playlist, setPlaylist] = useState([
+    {title: 'Every Day is Night', src:''},
+    {title: 'Snowfall', src:''},
+    {title: 'Digital Drive', src:''},
+    {title: 'RE: Snowfall', src:''},
+    {title: 'Meet the Staff', src:''},
+    {title: 'A Neon Glow Lights...', src:''},
+    {title: 'Nighttime Maneuvers', src:''},
+    {title: 'Your Love is a Drug', src:''},
+    {title: 'Heart of the City', src:''},
+    {title: 'Good for health', src:''},
+    {title: 'All Systems Go', src:''},
+    {title: 'Karmotrine Dream', src:''} 
+  ]);
+  const [playing, setPlaying] = useState(0);
+  const [selected, setSelected] = useState([1]);
 
   function handleGoToPlayer(e){
     e.preventDefault();
@@ -20,26 +36,24 @@ function App() {
     setMode('selector');
   }
 
+  function handleSelectMusic(index, e) {
+    e.preventDefault();
+    if (selected.includes(index)){
+      let newArr = selected.filter(i => i !== index);
+      setSelected(newArr);
+    }
+    else {
+      setSelected([...selected, index]);
+    }   
+  }
+
   return (
     <div className="App">
       <main>
         <div id="jukebox">
           <JukeboxLeft mode={mode} onClick={handleGoToSelector}/>
           <div id="right">
-            <div id="red-music">
-              <Music color="red" title="Every Day is Night" number="1" />
-              <Music color="red" title="Every Day is Night" number="2" />
-              <Music color="red" title="Every Day is Night" number="3" />
-              <Music color="red" title="Every Day is Night" number="4" />
-              <Music color="red" title="Every Day is Night" number="5" />
-              <Music color="red" title="Every Day is Night" number="6" />
-              <Music color="red" title="Every Day is Night" number="7" />
-              <Music color="red" title="Every Day is Night" number="8" />
-              <Music color="red" title="Every Day is Night" number="9" />
-              <Music color="red" title="Every Day is Night" number="10" />
-              <Music color="red" title="Every Day is Night" number="11" />
-              <Music color="red" title="Every Day is Night" number="12" />
-            </div>
+            <Playlist playlist={playlist} selected={selected} onClick={(index, e) => handleSelectMusic(index, e)}/>
           </div>
         </div>
         <div className="divisor"></div>

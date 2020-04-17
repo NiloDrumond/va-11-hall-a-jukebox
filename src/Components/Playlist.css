@@ -1,0 +1,14 @@
+#red-music {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  column-gap: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 30px 20px;
+}
+
+#red-music > div {
+  display: grid; 
+  grid-template-rows: repeat(6, 1fr);
+  row-gap: 20px;
+}
